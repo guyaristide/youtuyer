@@ -15,6 +15,8 @@ A new flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
+  s.dependency 'youtube-ios-player-helper', '~> 0.1.4'
+  s.dependency 'SnapKit', '~> 4.0'
 
   s.ios.deployment_target = '8.0'
 end

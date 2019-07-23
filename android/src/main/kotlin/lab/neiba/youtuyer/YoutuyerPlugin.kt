@@ -1,25 +1,77 @@
 package lab.neiba.youtuyer
 
-import io.flutter.plugin.common.MethodCall
-import io.flutter.plugin.common.MethodChannel
-import io.flutter.plugin.common.MethodChannel.MethodCallHandler
-import io.flutter.plugin.common.MethodChannel.Result
+import android.app.Activity
+import android.app.Application
+import android.os.Bundle
+import androidx.lifecycle.Lifecycle
 import io.flutter.plugin.common.PluginRegistry.Registrar
+import java.util.concurrent.atomic.AtomicReference
 
-class YoutuyerPlugin: MethodCallHandler {
+class YoutuyerPlugin(registrar: Registrar): Application.ActivityLifecycleCallbacks {
+  private val state: AtomicReference<Lifecycle.Event> = AtomicReference(Lifecycle.Event.ON_CREATE)
+  private val registrarActivityHashCode: Int
+
+  init {
+    registrarActivityHashCode = registrar.activity().hashCode()
+  }
+
+  override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
+    if (activity.hashCode() != registrarActivityHashCode) {
+      return
+    }
+    state.set(Lifecycle.Event.ON_CREATE)
+  }
+
+  override fun onActivityStarted(activity: Activity) {
+    if (activity.hashCode() != registrarActivityHashCode) {
+      return
+    }
+    state.set(Lifecycle.Event.ON_START)
+  }
+
+  override fun onActivityResumed(activity: Activity) {
+    if (activity.hashCode() != registrarActivityHashCode) {
+      return
+    }
+    state.set(Lifecycle.Event.ON_RESUME)
+  }
+
+  override fun onActivityPaused(activity: Activity) {
+    if (activity.hashCode() != registrarActivityHashCode) {
+      return
+    }
+    state.set(Lifecycle.Event.ON_PAUSE)
+  }
+
+
+  override fun onActivityStopped(activity: Activity) {
+    if (activity.hashCode() != registrarActivityHashCode) {
+      return
+    }
+    state.set(Lifecycle.Event.ON_STOP)
+  }
+
+  override fun onActivityDestroyed(activity: Activity) {
+    if (activity.hashCode() != registrarActivityHashCode) {
+      return
+    }
+    state.set(Lifecycle.Event.ON_DESTROY)
+  }
+
+  override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle?) {
+  }
+
   companion object {
     @JvmStatic
     fun registerWith(registrar: Registrar) {
-      val channel = MethodChannel(registrar.messenger(), "youtuyer")
-      channel.setMethodCallHandler(YoutuyerPlugin())
-    }
-  }
-
-  override fun onMethodCall(call: MethodCall, result: Result) {
-    if (call.method == "getPlatformVersion") {
-      result.success("Android ${android.os.Build.VERSION.RELEASE}")
-    } else {
-      result.notImplemented()
+      val plugin = YoutuyerPlugin(registrar)
+      registrar.activity().application.registerActivityLifecycleCallbacks(plugin)
+      registrar
+              .platformViewRegistry()
+              .registerViewFactory(
+                      "youtuyer", YoutubeFactory(registrar, plugin.state)
+              )
     }
   }
 }
+

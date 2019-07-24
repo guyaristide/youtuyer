@@ -25,11 +25,11 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/youtuyer/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
-  youtuyer: f14c98e6338c1ede00fd3ab8bd70b9e051f10010
+  youtuyer: 38dd8753fd3f376dfc3217a2f93cf9935b186217
 
 PODFILE CHECKSUM: 0c4399123e9061cf1372c2113845689a816a7433
 
-COCOAPODS: 1.7.4
+COCOAPODS: 1.5.3

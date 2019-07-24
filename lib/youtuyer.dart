@@ -66,12 +66,12 @@ class _YoutuyerWidgetState extends State<YoutuyerWidget> {
     } else if (defaultTargetPlatform == TargetPlatform.iOS) {
       return UiKitView(
         viewType: 'youtuyer',
-        /*onPlatformViewCreated: _onPlatformViewCreated,
+        onPlatformViewCreated: _onPlatformViewCreated,
         creationParams: <String, dynamic>{
           "videoId": widget.params.videoId,
           "showUI": widget.params.showUI,
           "startSeconds": widget.params.startSeconds
-        },*/
+        },
         creationParamsCodec: StandardMessageCodec(),
       );
     }

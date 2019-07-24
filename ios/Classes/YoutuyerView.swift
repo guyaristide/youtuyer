@@ -189,12 +189,11 @@ extension YoutuyerView: YTPlayerViewDelegate{
     }
     
     func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
-        print("\(state.rawValue)")
+        print("\(#function):\(state)")
         if (state == YTPlayerState.playing) {
             channel.invokeMethod("onVideoDuration", arguments: player.duration)
         }
         self.onStateChange(state: state)
-        // Pause 3, Play 2, 4 start, 1 finish
     }
     
     func playerView(_ playerView: YTPlayerView, didChangeTo quality: YTPlaybackQuality) {

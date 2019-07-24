@@ -8,7 +8,7 @@ class FlutterYoutubeViewController {
   final YouTubePlayerListener _listener;
 
   FlutterYoutubeViewController.of(int id, YouTubePlayerListener listener)
-      : _channel = new MethodChannel('plugins.hoanglm.com/youtube_$id'),
+      : _channel = new MethodChannel('youtuyer'),
         _listener = listener {
     if (_listener != null) {
       _channel.setMethodCallHandler(handleEvent);

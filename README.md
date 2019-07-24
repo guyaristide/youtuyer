@@ -1,14 +1,13 @@
 # youtuyer
 
-A new flutter plugin project.
+__Highly inspired by [flutter_youtube_view](https://github.com/hoanglm4/flutter_youtube_view)__
 
-## Getting Started
+This plugin provide a Youtube player for Android and iOS. We've encoutered problems using other flutter plugins : iOS integration doesn't work or take long time to load before playing videos. 
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+This plugin using:
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+* Android __(same library work well)__: https://github.com/PierfrancescoSoffritti/android-youtube-player 
+* iOS: https://github.com/youtube/youtube-ios-player-helper
+
+## Usage (Soon) 
+

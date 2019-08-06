@@ -1,6 +1,6 @@
 # youtuyer
 
-# __Highly inspired by [flutter_youtube_view](https://github.com/hoanglm4/flutter_youtube_view)__
+# :pray: __Highly inspired by [flutter_youtube_view](https://github.com/hoanglm4/flutter_youtube_view)__ :pray:
 
 This plugin provide a Youtube player for Android and iOS. We've encoutered problems using other flutter plugins : iOS integration doesn't work or take long time to load before playing videos. 
 

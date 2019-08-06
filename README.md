@@ -9,5 +9,14 @@ This plugin using:
 * Android __(same library work well)__: https://github.com/PierfrancescoSoffritti/android-youtube-player 
 * iOS: https://github.com/youtube/youtube-ios-player-helper
 
-## Usage (Soon) 
+## Usage
+
+Actually in your pubspec file
+
+```yml
+youtuyer:
+    git:
+      url: git://github.com/guyaristide/youtuyer.git
+```
+
 

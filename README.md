@@ -6,7 +6,7 @@ This plugin provide a Youtube player for Android and iOS. We've encoutered probl
 
 This plugin using:
 
-* Android __(same library work well)__: https://github.com/PierfrancescoSoffritti/android-youtube-player 
+* Android __(same library ! works well)__: https://github.com/PierfrancescoSoffritti/android-youtube-player 
 * iOS: https://github.com/youtube/youtube-ios-player-helper
 
 ## Usage
